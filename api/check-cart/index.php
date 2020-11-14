@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Access-Control-Allow-Headers: Content-Disposition, Content-Type, Content-Length, Accept-Encoding");
 header("Content-type:application/json");
-include "config\apiKeys.php";
+include "../../config/apiKeys.php";
 
 
 if (isset($_POST['checkCart']) && isset($_POST['checkTotal'])) {
@@ -55,8 +55,8 @@ if (isset($_POST['checkCart']) && isset($_POST['checkTotal'])) {
     $curl = curl_init();
 
     curl_setopt_array($curl, [
-        CURLOPT_URL => $apiUrl,
-        CURLOPT_HTTPHEADER => ['apikey: ' . $apiKey, 'Content-Type: application/json'],
+        CURLOPT_URL => $api_url,
+        CURLOPT_HTTPHEADER => ['apikey: ' . $api_key, 'Content-Type: application/json'],
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS => $post
