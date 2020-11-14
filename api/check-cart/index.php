@@ -16,7 +16,7 @@ if (isset($_POST['checkCart']) && isset($_POST['checkTotal'])) {
     $debt = $_POST['checkTotal'];
     $api_url = 'https://staging.adamspay.com/api/v1/debts?update_if_exists=1';
     $api_key= $_ENV['API_KEY']; //GET ENV
-    echo $api_key;
+    
 
     //the true 2d arg allow to use as an array
     $cart_info = json_decode($cart_raw, true);
@@ -60,7 +60,7 @@ if (isset($_POST['checkCart']) && isset($_POST['checkTotal'])) {
 
     //make post
     $curl = curl_init();
-    echo $api_key;
+    
 
     curl_setopt_array($curl, [
         CURLOPT_URL => $api_url,
@@ -81,13 +81,13 @@ if (isset($_POST['checkCart']) && isset($_POST['checkTotal'])) {
         $payUrl = isset($data['debt']) ? $data['debt']['payUrl'] : null;
 
         if ($payUrl) {
-            echo json_encode($data = array(
+            echo json_encode(array(
                 'status' => "Deuda creada exitosamente",
                 'url' => $payUrl
 
             ));
         } else {
-            echo json_encode($data = array(
+            echo json_encode(array(
                 'status' => "No se pudo crear la deuda",
                 'error' => $data['meta']
             ));
