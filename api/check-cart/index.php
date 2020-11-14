@@ -3,7 +3,7 @@
 require  "../../index.php";
 
 
-// header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Access-Control-Allow-Headers: Content-Disposition, Content-Type, Content-Length, Accept-Encoding");
 header("Content-type:application/json");
@@ -16,7 +16,7 @@ if (isset($_POST['checkCart']) && isset($_POST['checkTotal'])) {
     $debt = $_POST['checkTotal'];
     $api_url = 'https://staging.adamspay.com/api/v1/debts?update_if_exists=1';
     $api_key= $_ENV['API_KEY']; //GET ENV
-    
+    echo $api_key;
 
     //the true 2d arg allow to use as an array
     $cart_info = json_decode($cart_raw, true);
