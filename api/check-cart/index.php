@@ -56,6 +56,7 @@ if (isset($_POST['checkCart']) && isset($_POST['checkTotal'])) {
 
     //make post
     $curl = curl_init();
+    echo $api_key;
 
     curl_setopt_array($curl, [
         CURLOPT_URL => $api_url,
