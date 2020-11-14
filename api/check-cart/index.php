@@ -1,14 +1,12 @@
+
 <?php
-require '../../vendor/autoload.php';
+
 
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Access-Control-Allow-Headers: Content-Disposition, Content-Type, Content-Length, Accept-Encoding");
 header("Content-type:application/json");
 
-$dotenv =
-    Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
 
 if (isset($_POST['checkCart']) && isset($_POST['checkTotal'])) {
 
