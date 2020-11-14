@@ -3,7 +3,7 @@
 
 class Database
 {
-    private $db = parse_url(getenv("DATABASE_URL"));
+
 
     // private $host='localhost';
     // private $db_name='products';
@@ -13,6 +13,7 @@ class Database
 
     public function connect()
     {
+        $db = parse_url(getenv("DATABASE_URL"));
 
         $this->conn = null;
 
@@ -20,11 +21,11 @@ class Database
             $this->conn = new PDO(
                 "pgsql:" . sprintf(
                     "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-                    $this->db["host"],
-                    $this->db["port"],
-                    $this->db["user"],
-                    $this->db["pass"],
-                    ltrim($this->db["path"], "/")
+                    $db["host"],
+                    $db["port"],
+                    $db["user"],
+                    $db["pass"],
+                    ltrim($db["path"], "/")
                 )
             );
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
