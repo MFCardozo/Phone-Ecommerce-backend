@@ -8,5 +8,5 @@ error_reporting(E_ALL);
 
 require 'vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable( ".env");
+$dotenv = Dotenv\Dotenv::createImmutable();
 $dotenv->load();
