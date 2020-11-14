@@ -1,9 +1,9 @@
 <?php
-include "./apiKeys.php";
-$db = parse_url(getenv("DATABASE_URL"));
+
+
 class Database
 {
-
+    private $db = parse_url(getenv("DATABASE_URL"));
 
     // private $host='localhost';
     // private $db_name='products';
