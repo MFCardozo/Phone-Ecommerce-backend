@@ -8,10 +8,10 @@ header('Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE');
 header('Access-Control-Allow-Headers: Content-Disposition, Content-Type, Content-Length, Accept-Encoding,Origin,X-Requested-width,Accept');
 header('Content-type:application/json;charset=utf-8');
 
-
+require  "../../index.php";
 
 if (isset($_POST['checkCart']) && isset($_POST['checkTotal'])) {
- require  "../../index.php";
+ 
     $cart_raw = $_POST['checkCart'];
     $debt = $_POST['checkTotal'];
     $api_url = 'https://staging.adamspay.com/api/v1/debts?update_if_exists=1';
