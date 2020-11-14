@@ -5,6 +5,7 @@ header("Access-Control-Allow-Headers: Content-Disposition, Content-Type, Content
 header("Content-type:application/json");
 require_once "../config/apiKeys.php";
 echo $api_key;
+global $api_url;
 echo $api_url;
 if (isset($_POST['checkCart']) && isset($_POST['checkTotal'])) {
     $cart_raw = $_POST['checkCart'];
