@@ -3,14 +3,17 @@ header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Access-Control-Allow-Headers: Content-Disposition, Content-Type, Content-Length, Accept-Encoding");
 header("Content-type:application/json");
-include "../../config/apiKeys.php";
+
 
 
 if (isset($_POST['checkCart']) && isset($_POST['checkTotal'])) {
+    include "../../config/apiKeys.php";
     $cart_raw = $_POST['checkCart'];
     $debt = $_POST['checkTotal'];
-    global $api_key;
-    global $api_url;
+
+    $api_key;
+    $api_url;
+
     //the true 2d arg allow to use as an array
     $cart_info = json_decode($cart_raw, true);
 
