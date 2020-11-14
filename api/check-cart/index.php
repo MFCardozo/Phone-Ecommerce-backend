@@ -10,9 +10,9 @@ if (isset($_POST['checkCart']) && isset($_POST['checkTotal'])) {
     include "../../config/apiKeys.php";
     $cart_raw = $_POST['checkCart'];
     $debt = $_POST['checkTotal'];
-
+    $api_url = 'https://staging.adamspay.com/api/v1/debts?update_if_exists=1';
     $api_key;
-    $api_url;
+
 
     //the true 2d arg allow to use as an array
     $cart_info = json_decode($cart_raw, true);
