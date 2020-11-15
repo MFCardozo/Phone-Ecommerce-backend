@@ -12,6 +12,8 @@ if( $hmac_req !== $hmac_rec ){
 
 
 // Todo OK: Procesar
+echo "working" . "\n";
 echo $post;
+
 
 ?>
