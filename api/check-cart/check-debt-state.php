@@ -12,8 +12,8 @@ $api_key= $_ENV['API_KEY']; //GET ENV
 $curl = curl_init();
  
 curl_setopt_array($curl,[
- CURLOPT_URL => $apiUrl,
- CURLOPT_HTTPHEADER => ['apikey: '.$apiKey],
+ CURLOPT_URL => $api_url,
+ CURLOPT_HTTPHEADER => ['apikey: '.$api_key],
  CURLOPT_RETURNTRANSFER => true
  ]);
  
