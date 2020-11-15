@@ -1,7 +1,7 @@
 <?php
 function cancel_debt($api_url,$api_key){
 
-
+$cancel_Response="";
 $curl = curl_init();
  
 curl_setopt_array($curl,[
@@ -17,20 +17,19 @@ if( $response ){
  
   $debt = isset($data['debt']) ? $data['debt'] : null;
   if( $debt ){
-    echo "Pay canceled successfully";
-    print_r($debt);
+    $cancel_Response="Pay canceled successfully";
+    
   } else {
-    echo "Cannot canceled,try again";
-    print_r($data['meta']);
+    $cancel_Response= "Cannot canceled your pay,try again";
+    
   }
- 
 }
 else {
   echo 'curl_error: ',curl_error($curl);
 }
 curl_close($curl);
 
-
+return $cancel_Response;
 }
 
 ?>
