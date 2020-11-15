@@ -12,8 +12,7 @@ if( $hmac_req !== $hmac_rec ){
 
 
 // Todo OK: Procesar
-echo "working" . "\n";
-echo $post;
+error_log( json_encode( $post, JSON_PRETTY_PRINT ), 3, "/tmp/json.txt" );
 
 
 ?>
