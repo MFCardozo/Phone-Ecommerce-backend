@@ -8,10 +8,11 @@ header('Content-type:application/json;charset=utf-8');
 
 include  "../../dotenvLoader.php"; //only in dev mode
 
-if (isset($_POST['checkCart']) && isset($_POST['checkTotal'])) {
+if (isset($_POST['checkCart']) && isset($_POST['checkTotal'])&&isset($_POST['debtId'])) {
  
     $cart_raw = $_POST['checkCart'];
     $debt = $_POST['checkTotal'];
+    $id_debt = $_POST['debtId'];
     $api_url = 'https://staging.adamspay.com/api/v1/debts?update_if_exists=1';
     $api_key= $_ENV['API_KEY']; //GET ENV
     
@@ -21,7 +22,7 @@ if (isset($_POST['checkCart']) && isset($_POST['checkTotal'])) {
 
 
     $label = '';
-    $id_debt = 'deuda';
+    
 
     $comma_counter = 1;
 
@@ -30,8 +31,6 @@ if (isset($_POST['checkCart']) && isset($_POST['checkTotal'])) {
         $comma = count($cart_info) > $comma_counter ? "," : "";
 
         $label = $label . $product['title'] . $comma;
-
-        $id_debt = $id_debt . strval($product['id']);
 
         $comma_counter++;
     }
