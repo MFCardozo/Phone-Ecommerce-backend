@@ -20,7 +20,7 @@ if( $response ){
     $cancel_Response="Pay canceled successfully";
     
   } else {
-    $cancel_Response= "Cannot canceled your pay,try again";
+    $cancel_Response= "Cannot canceled your debt,try again";
     
   }
 }
