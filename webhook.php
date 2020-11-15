@@ -15,11 +15,8 @@ if( $hmac_req !== $hmac_rec ){
 
 // Todo OK: Procesar
 
-$fWrite = fopen("log.txt","a");
-$wrote = fwrite($fWrite, var_dump($post));
-fclose($fWrite);
-// $data=json_decode($post,true);
-// error_log( json_encode( $data, JSON_PRETTY_PRINT ), 3, "/tmp/json.txt" );
+$data=json_decode($post,true);
+error_log( json_encode( $data, JSON_PRETTY_PRINT ), 3, "/tmp/json.txt" );
 
 
 ?>
