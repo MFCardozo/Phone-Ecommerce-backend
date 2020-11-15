@@ -5,5 +5,5 @@ header('Access-Control-Allow-Headers: Content-Disposition, Content-Type, Content
 header('Content-type:application/json;charset=utf-8');
 
 $debt_id = isset($_GET['debt-id']) ? $_GET['debt-id'] : die();
-echo $debt_id
+echo "working perfect";
 ?>
